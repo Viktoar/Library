@@ -5,7 +5,7 @@ require 'lib/reader'
 require 'lib/order'
 
 class Library
-  attr_accessor :authors, :books, :readers, :orders
+  attr_reader :authors, :books, :readers, :orders
 
   def initialize(file_path = 'yml/library.yml')
     @library = YAML::Store.new(file_path)

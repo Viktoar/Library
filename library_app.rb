@@ -1,13 +1,14 @@
 require 'lib/library'
+
 library = Library.new
 
-john = Author.new('John')
-meg = Author.new('Meg')
-donna = Author.new('Donna')
+john = Author.new(name: 'John')
+meg = Author.new(name: 'Meg')
+donna = Author.new(name: 'Donna')
 
-ring = Book.new('Ring', john)
-fly = Book.new('Fly', meg)
-boat = Book.new('Boat', donna)
+ring = Book.new(title: 'Ring', author: john)
+fly = Book.new(title: 'Fly', author: meg)
+boat = Book.new(title: 'Boat', author: donna)
 
 ken = Reader.new(name: 'Ken', email: 'ken@email', city: 'NY', street: 'croosroad', house: 1)
 chak = Reader.new(name: 'Chak', email: 'chak@email', city: 'NY', street: 'croosroad', house: 2)
@@ -30,4 +31,4 @@ library.add(Order.new(book: boat, reader: bob))
 
 puts library.top_reader
 puts library.most_popular_book
-puts library.number_of_readers_of_the_most_popular_books(2)
+puts library.number_of_readers_of_the_most_popular_books

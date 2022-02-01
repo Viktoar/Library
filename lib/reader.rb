@@ -1,7 +1,11 @@
+require 'modules/validation'
+
 class Reader
-  attr_accessor :name, :email, :city, :street, :house
+  include Validation
+  attr_reader :name, :email, :city, :street, :house
 
   def initialize(name:, email:, city:, street:, house:)
+    validate({ name => String, email => String, city => String, street => String, house => Integer })
     @name = name
     @email = email
     @city = city
