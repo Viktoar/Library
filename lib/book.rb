@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'modules/validation'
 
 class Book
@@ -5,7 +7,8 @@ class Book
   attr_reader :title, :author
 
   def initialize(title:, author:)
-    validate({ title => String, author => Author })
+    validate_str(title, String)
+    validate_class(author, Author)
     @title = title
     @author = author
   end

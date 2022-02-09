@@ -1,38 +1,22 @@
+# frozen_string_literal: true
+
 require 'yaml/store'
 require 'lib/author'
 require 'lib/book'
 require 'lib/reader'
 require 'lib/order'
+require 'modules/uploader'
 
 class Library
+  include Uploader
   attr_reader :authors, :books, :readers, :orders
 
-  def initialize(file_path = 'yml/library.yml')
-    @library = YAML::Store.new(file_path)
-    @library.transaction do
-      @authors = []
-      @books = []
-      @readers = []
-      @orders = []
-    end
-  end
-
-  def load
-    @library.transaction do
-      @authors = @library['authors'] || []
-      @books = @library['books'] || []
-      @readers = @library['readers'] || []
-      @orders = @library['orders'] || []
-    end
-  end
-
-  def save
-    @library.transaction do
-      @library['authors'] = @authors
-      @library['books'] = @books
-      @library['readers'] = @readers
-      @library['orders'] = @orders
-    end
+  def initialize
+    @authors = []
+    @books = []
+    @readers = []
+    @orders = []
+    load
   end
 
   def add(entity)
