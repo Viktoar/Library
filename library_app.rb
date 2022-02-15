@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'lib/library'
-require 'lib/seed'
+require_relative 'lib/library'
+require_relative 'lib/seed'
 
 library = Library.new
 Seed.new(library)

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'modules/validation'
+require_relative '../modules/validation'
 
 class Reader
   include Validation

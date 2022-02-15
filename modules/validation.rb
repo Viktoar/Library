@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'errors/error_class_type'
-require 'errors/error_empty_string'
-require 'errors/error_positive_value'
+require_relative '../errors/error_class_type'
+require_relative '../errors/error_empty_string'
+require_relative '../errors/error_positive_value'
 
 module Validation
   private

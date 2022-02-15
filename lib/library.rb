@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'yaml/store'
-require 'lib/author'
-require 'lib/book'
-require 'lib/reader'
-require 'lib/order'
-require 'modules/uploader'
+require_relative 'author'
+require_relative 'book'
+require_relative 'reader'
+require_relative 'order'
+require_relative '../modules/uploader'
 
 class Library
   include Uploader

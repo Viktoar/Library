@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'date'
-require 'modules/validation'
+require_relative '../modules/validation'
 
 class Order
   include Validation
